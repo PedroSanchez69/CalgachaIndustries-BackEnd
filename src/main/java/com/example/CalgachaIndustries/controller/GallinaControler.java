@@ -16,7 +16,7 @@ import com.example.CalgachaIndustries.model.Gallina;
 import com.example.CalgachaIndustries.repository.GallinaRepository;
 
 @RestController
-@RequestMapping("/gallinas")
+@RequestMapping("/chickens")
 public class GallinaControler {
 
     private final GallinaRepository repoGallina;
