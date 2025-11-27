@@ -20,23 +20,6 @@ docker run --rm -e PORT=8080 -p 8080:8080 calgacha-backend
 
 El `Dockerfile` usa una construcción multi-stage que compila el proyecto con Maven y luego copia el JAR resultante a una imagen JRE mínima. En tiempo de ejecución se respeta la variable de entorno `PORT` (útil para Render y otros PaaS).
 
-## Ejecutar local sin Docker
-Si prefieres ejecutar localmente sin contenedores:
-
-Windows PowerShell:
-```powershell
-.\mvnw -B -DskipTests package
-java -jar target\<nombre-del-jar>.jar --server.port=8080
-```
-
-Linux / macOS:
-```bash
-./mvnw -B -DskipTests package
-java -jar target/<nombre-del-jar>.jar --server.port=8080
-```
-
-Reemplaza `<nombre-del-jar>` por el .jar generado (por ejemplo `CalgachaIndustries-0.0.1-SNAPSHOT.jar`).
-
 ## Despliegue en Render (usando Docker)
 1. Subir el repositorio a GitHub (asegúrate de que `Dockerfile` esté en la raíz).
 2. En Render, crea un nuevo **Web Service** y conecta tu repositorio de GitHub.

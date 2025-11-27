@@ -6,7 +6,8 @@ WORKDIR /workspace
 COPY . .
 
 # Make the wrapper executable and build the project (skip tests for faster builds)
-RUN if [ -f ./mvnw ]; then chmod +x ./mvnw && ./mvnw -B -DskipTests package; else mvn -B -DskipTests package; fi
+RUN mvn -B -DskipTests package
+
 
 # Runtime stage: small JRE image
 FROM eclipse-temurin:17-jre-jammy
