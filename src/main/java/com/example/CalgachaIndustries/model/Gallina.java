@@ -18,4 +18,5 @@ public class Gallina {
     private int edad;
     private String raza;
     private String descripcion;
+    private String imagenUri;
 }
